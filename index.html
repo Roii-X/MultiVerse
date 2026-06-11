@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MultiVerse PS3</title>
+<style type="text/css">
+
+* { margin: 0; padding: 0; }
+
+body {
+  background-color: #04060d;
+  color: #d0daf0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+/* ---- WRAP: fluid by default ---- */
+.wrap {
+  width: 92%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+/* ---- HEADER ---- */
+.header {
+  text-align: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #1a3060;
+  margin-bottom: 28px;
+}
+
+.logo-box {
+  background-color: #003791;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border: 1px solid #0070d1;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.site-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.site-title span { color: #00aaff; }
+
+.subtitle {
+  font-size: 10px;
+  color: #3a5a8a;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.credits {
+  background-color: #0a1530;
+  border: 1px solid #1a3060;
+  color: #5a80b0;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 5px 18px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.credits b { color: #00aaff; }
+
+/* device badge */
+.device-badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border: 1px solid #2a4a7a;
+  color: #4a8aaa;
+  margin-top: 6px;
+}
+
+/* ---- SECTION LABEL ---- */
+.sec-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2a4a7a;
+  margin-bottom: 14px;
+}
+
+/* ---- DIVIDER ---- */
+.divider {
+  height: 1px;
+  background-color: #1a3060;
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+/* ---- TABLE GRID ---- */
+.grid-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+/* PC / PS3: 2 columns */
+.grid-table td {
+  width: 50%;
+  vertical-align: top;
+  padding: 0;
+}
+
+/* Mobile: full width cells stacked via JS */
+.grid-table td.full-row {
+  width: 100%;
+  display: block;
+}
+
+/* ---- CARD ---- */
+.card {
+  background-color: #0d1525;
+  border: 1px solid #1a2a4a;
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: #003791;
+  padding: 18px 16px 16px 16px;
+  width: 100%;
+}
+
+.card-blue   { border-top-color: #0070d1; }
+.card-cyan   { border-top-color: #00a8d0; }
+.card-gold   { border-top-color: #c07000; }
+.card-purple { border-top-color: #6030c0; }
+.card-green  { border-top-color: #009050; }
+.card-red    { border-top-color: #c02030; }
+.card-orange { border-top-color: #c06000; }
+.card-teal   { border-top-color: #008070; }
+.card-pink   { border-top-color: #b000a0; }
+.card-indigo { border-top-color: #3050c0; }
+.card-silver { border-top-color: #4a5a78; }
+
+.card-tag {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1px solid #1a3a6a;
+  background-color: #0a1a40;
+  color: #5aaaff;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 11px;
+  color: #4a6a9a;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 9px 0;
+  color: #ffffff;
+}
+
+.btn-blue   { background-color: #003791; border: 1px solid #0070d1; }
+.btn-cyan   { background-color: #005070; border: 1px solid #00a8d0; }
+.btn-gold   { background-color: #7a4a00; border: 1px solid #c07000; }
+.btn-purple { background-color: #3a0090; border: 1px solid #6030c0; }
+.btn-green  { background-color: #005030; border: 1px solid #009050; }
+.btn-red    { background-color: #800020; border: 1px solid #c02030; }
+.btn-orange { background-color: #803000; border: 1px solid #c06000; }
+.btn-teal   { background-color: #005040; border: 1px solid #008070; }
+.btn-pink   { background-color: #700060; border: 1px solid #b000a0; }
+.btn-indigo { background-color: #202080; border: 1px solid #3050c0; }
+.btn-silver { background-color: #2a3a50; border: 1px solid #4a5a78; }
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  border-top: 1px solid #1a3060;
+  padding-top: 22px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #1e3050;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ft-name { color: #2a4a80; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 6px; }
+.ft-by   { color: #3a6aaa; margin-bottom: 8px; }
+
+/* ---- MOBILE OVERRIDE (CSS media query for real browsers) ---- */
+/* PS3 browser ignores media queries — safe fallback to table layout */
+@media only screen and (max-width: 600px) {
+  .wrap { width: 96%; }
+  .site-title { font-size: 18px; letter-spacing: 2px; }
+  .grid-table, .grid-table tbody, .grid-table tr, .grid-table td { display: block; width: 100%; }
+  .grid-table td { margin-bottom: 10px; }
+  .card { padding: 14px 12px; }
+}
+
+</style>
+
+<script type="text/javascript">
+// Smart device detection — runs only if JS supported (PC/Mobile)
+// PS3 browser has very limited JS but can run basic scripts
+(function() {
+  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 800;
+  var ua = navigator.userAgent || '';
+
+  var device = 'PC';
+  var isPS3  = (ua.indexOf('PLAYSTATION 3') !== -1 || ua.indexOf('PS3') !== -1);
+  var isMobile = !isPS3 && (w < 601 || /Mobi|Android|iPhone|iPad|iPod/i.test(ua));
+
+  if (isPS3)     device = 'PS3';
+  else if (isMobile) device = 'Mobile';
+
+  // Show badge
+  window.onload = function() {
+    var badge = document.getElementById('device-badge');
+    if (badge) {
+      if (device === 'PS3')    { badge.innerHTML = '&#9654; Running on PlayStation 3'; badge.style.borderColor = '#003791'; badge.style.color = '#5aaaff'; }
+      else if (device === 'Mobile') { badge.innerHTML = '&#9654; Running on Mobile';       badge.style.borderColor = '#009050'; badge.style.color = '#40e890'; }
+      else                          { badge.innerHTML = '&#9654; Running on PC';             badge.style.borderColor = '#6030c0'; badge.style.color = '#b080ff'; }
+    }
+
+    // Mobile: stack table cells to single column
+    if (isMobile) {
+      var tds = document.getElementsByTagName('td');
+      for (var i = 0; i < tds.length; i++) {
+        tds[i].style.display = 'block';
+        tds[i].style.width   = '100%';
+        tds[i].style.marginBottom = '10px';
+      }
+      // Fix colspan spans
+      var title = document.getElementById('site-title');
+      if (title) { title.style.fontSize = '18px'; title.style.letterSpacing = '2px'; }
+    }
+  };
+})();
+</script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-box">MULTI VERSE</div>
+    <div class="site-title" id="site-title">MultiVerse <span>PS3</span></div>
+    <div class="subtitle">PlayStation 3 &#183; CFW &amp; HEN Tools &#183; Download Hub</div>
+    <div class="credits">Web Made by: <b>RoiiX</b></div>
+    <br />
+    <div class="device-badge" id="device-badge">&#9654; Detecting Device...</div>
+  </div>
+
+  <!-- CORE TOOLS -->
+  <div class="sec-label">&#9658; Core Tools</div>
+
+  <table class="grid-table" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td>
+          <div class="card card-blue">
+            <div class="card-tag">File Manager</div>
+            <div class="card-title">multiMAN</div>
+            <div class="card-desc">Multi-purpose file manager, game loader, and backup manager. Essential for every CFW PS3.</div>
+            <a class="btn btn-blue" href="https://store.brewology.com/ahomebrew.php?brewid=24">&#8659; Download</a>
+          </div>
+        </td>
+        <td>
+          <div class="card card-cyan">
+            <div class="card-tag">VSH Plugin</div>
+            <div class="card-title">webMAN MOD</div>
+            <div class="card-desc">Powerful VSH plugin for mounting games, fan control, and web-based PS3 management.</div>
+            <a class="btn btn-cyan" href="https://github.com/aldostools/webMAN-MOD/releases/latest">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card card-gold">
+            <div class="card-tag">SPRX Plugin</div>
+            <div class="card-title">Trophy Unlocker</div>
+            <div class="card-desc">SPRX plugin to unlock PS3 trophies via CCAPI. Unlock any trophy in-game easily.</div>
+            <a class="btn btn-gold" href="https://www.psx-place.com/resources/trophy-unlocker.740/">&#8659; Download</a>
+          </div>
+        </td>
+        <td>
+          <div class="card card-purple">
+            <div class="card-tag">Save Manager</div>
+            <div class="card-title">Apollo Save Tool</div>
+            <div class="card-desc">Advanced save-data manager with patching, resigning, and cloud sync. By bucanero.</div>
+            <a class="btn btn-purple" href="https://github.com/bucanero/apollo-ps3/releases/latest">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card card-green">
+            <div class="card-tag">Game Loader</div>
+            <div class="card-title">Iris Manager</div>
+            <div class="card-desc">Clean game backup manager with PS3 XMB integration. Simple, lightweight, reliable.</div>
+            <a class="btn btn-green" href="https://www.psx-place.com/resources/iris-manager.755/">&#8659; Download</a>
+          </div>
+        </td>
+        <td>
+          <div class="card card-red">
+            <div class="card-tag">HEN Enabler</div>
+            <div class="card-title">PS3HEN</div>
+            <div class="card-desc">Homebrew Enabler for non-CFW consoles. Run homebrew and backups without a mod chip.</div>
+            <a class="btn btn-red" href="https://www.psx-place.com/resources/ps3hen.1340/">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- EXTRA TOOLS -->
+  <div class="sec-label">&#9658; Extra Tools</div>
+
+  <table class="grid-table" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td>
+          <div class="card card-orange">
+            <div class="card-tag">CFW Toolbox</div>
+            <div class="card-title">Rebug Toolbox</div>
+            <div class="card-desc">System-level toolbox for Rebug CFW. Manage QA flag, mode switching, and advanced settings.</div>
+            <a class="btn btn-orange" href="https://github.com/n1ghty/rebug-toolbox/releases">&#8659; Download</a>
+          </div>
+        </td>
+        <td>
+          <div class="card card-teal">
+            <div class="card-tag">PKG Installer</div>
+            <div class="card-title">PKGi PS3</div>
+            <div class="card-desc">Browse and install PS3 content packages directly from your console. No PC required.</div>
+            <a class="btn btn-teal" href="https://github.com/bucanero/pkgi-ps3/releases/latest">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card card-pink">
+            <div class="card-tag">Media Player</div>
+            <div class="card-title">Showtime</div>
+            <div class="card-desc">Feature-rich media player. Supports local files, network streams, and video formats.</div>
+            <a class="btn btn-pink" href="https://github.com/andoma/showtime/releases">&#8659; Download</a>
+          </div>
+        </td>
+        <td>
+          <div class="card card-indigo">
+            <div class="card-tag">Emulator Frontend</div>
+            <div class="card-title">RetroArch PS3</div>
+            <div class="card-desc">Universal emulator frontend. Play retro games from dozens of classic consoles.</div>
+            <a class="btn btn-indigo" href="https://www.retroarch.com/?page=platforms">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="card card-silver">
+            <div class="card-tag">HEN Utilities</div>
+            <div class="card-title">PS3 HEN Tools</div>
+            <div class="card-desc">Collection of utilities for HEN users — payload injectors, package managers, and system tweaks.</div>
+            <a class="btn btn-silver" href="https://www.psx-place.com/forums/ps3-homebrew.15/">&#8659; Download</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ft-name">MULTIVERSE PS3</div>
+    <div class="ft-by">Web Made by: RoiiX</div>
+    <div>For CFW &amp; HEN consoles only &#183; All tools are open-source homebrew</div>
+  </div>
+
+</div>
+</body>
+</html>
