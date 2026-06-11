@@ -15,10 +15,8 @@ body {
   font-size: 13px;
 }
 
-/* ---- WRAP: fluid by default ---- */
 .wrap {
-  width: 92%;
-  max-width: 900px;
+  width: 860px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
@@ -77,16 +75,15 @@ body {
 
 .credits b { color: #00aaff; }
 
-/* device badge */
 .device-badge {
   display: inline-block;
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 3px 12px;
+  padding: 3px 14px;
   border: 1px solid #2a4a7a;
   color: #4a8aaa;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 /* ---- SECTION LABEL ---- */
@@ -95,36 +92,48 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #2a4a7a;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 /* ---- DIVIDER ---- */
 .divider {
   height: 1px;
   background-color: #1a3060;
-  margin-top: 26px;
-  margin-bottom: 26px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
-/* ---- TABLE GRID ---- */
+/* ---- GRID: outer table ---- */
 .grid-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 10px;
+  border-spacing: 0;
+  margin-bottom: 0;
 }
 
-/* PC / PS3: 2 columns */
-.grid-table td {
+/* each ROW has bottom spacing via a spacer row */
+.grid-table td.cell {
   width: 50%;
+  vertical-align: top;
+  padding-right: 8px;
+  padding-bottom: 0;
+}
+
+.grid-table td.cell-right {
+  width: 50%;
+  vertical-align: top;
+  padding-left: 8px;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.grid-table td.cell-full {
   vertical-align: top;
   padding: 0;
 }
 
-/* Mobile: full width cells stacked via JS */
-.grid-table td.full-row {
-  width: 100%;
-  display: block;
-}
+/* spacer row between card rows */
+.row-spacer { height: 12px; }
 
 /* ---- CARD ---- */
 .card {
@@ -133,21 +142,22 @@ body {
   border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #003791;
-  padding: 18px 16px 16px 16px;
-  width: 100%;
+  padding: 16px 15px 15px 15px;
+  /* equal height trick: make inner layout fill */
 }
 
-.card-blue   { border-top-color: #0070d1; }
-.card-cyan   { border-top-color: #00a8d0; }
-.card-gold   { border-top-color: #c07000; }
-.card-purple { border-top-color: #6030c0; }
-.card-green  { border-top-color: #009050; }
-.card-red    { border-top-color: #c02030; }
-.card-orange { border-top-color: #c06000; }
-.card-teal   { border-top-color: #008070; }
-.card-pink   { border-top-color: #b000a0; }
-.card-indigo { border-top-color: #3050c0; }
-.card-silver { border-top-color: #4a5a78; }
+/* top border colors */
+.c-blue   { border-top-color: #0070d1; }
+.c-cyan   { border-top-color: #00c8f0; }
+.c-gold   { border-top-color: #c07000; }
+.c-purple { border-top-color: #6030c0; }
+.c-green  { border-top-color: #00b060; }
+.c-red    { border-top-color: #c02030; }
+.c-orange { border-top-color: #c06000; }
+.c-teal   { border-top-color: #008070; }
+.c-pink   { border-top-color: #b000a0; }
+.c-indigo { border-top-color: #3050c0; }
+.c-silver { border-top-color: #4a5a78; }
 
 .card-tag {
   font-size: 9px;
@@ -158,7 +168,7 @@ body {
   background-color: #0a1a40;
   color: #5aaaff;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .card-title {
@@ -167,14 +177,17 @@ body {
   color: #ffffff;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .card-desc {
   font-size: 11px;
   color: #4a6a9a;
-  line-height: 1.65;
-  margin-bottom: 14px;
+  line-height: 1.6;
+  margin-bottom: 13px;
+  /* fixed height so all cards same size */
+  height: 36px;
+  overflow: hidden;
 }
 
 /* ---- BUTTONS ---- */
@@ -184,23 +197,25 @@ body {
   text-decoration: none;
   font-size: 10px;
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   padding: 9px 0;
   color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
 }
 
-.btn-blue   { background-color: #003791; border: 1px solid #0070d1; }
-.btn-cyan   { background-color: #005070; border: 1px solid #00a8d0; }
-.btn-gold   { background-color: #7a4a00; border: 1px solid #c07000; }
-.btn-purple { background-color: #3a0090; border: 1px solid #6030c0; }
-.btn-green  { background-color: #005030; border: 1px solid #009050; }
-.btn-red    { background-color: #800020; border: 1px solid #c02030; }
-.btn-orange { background-color: #803000; border: 1px solid #c06000; }
-.btn-teal   { background-color: #005040; border: 1px solid #008070; }
-.btn-pink   { background-color: #700060; border: 1px solid #b000a0; }
-.btn-indigo { background-color: #202080; border: 1px solid #3050c0; }
-.btn-silver { background-color: #2a3a50; border: 1px solid #4a5a78; }
+.b-blue   { background-color: #003791; border-color: #0070d1; }
+.b-cyan   { background-color: #007090; border-color: #00c8f0; }
+.b-gold   { background-color: #7a4a00; border-color: #c07000; }
+.b-purple { background-color: #3a0090; border-color: #6030c0; }
+.b-green  { background-color: #006040; border-color: #00b060; }
+.b-red    { background-color: #800020; border-color: #c02030; }
+.b-orange { background-color: #803000; border-color: #c06000; }
+.b-teal   { background-color: #005040; border-color: #008070; }
+.b-pink   { background-color: #700060; border-color: #b000a0; }
+.b-indigo { background-color: #202080; border-color: #3050c0; }
+.b-silver { background-color: #2a3a50; border-color: #4a5a78; }
 
 /* ---- FOOTER ---- */
 .footer {
@@ -217,52 +232,38 @@ body {
 .ft-name { color: #2a4a80; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 6px; }
 .ft-by   { color: #3a6aaa; margin-bottom: 8px; }
 
-/* ---- MOBILE OVERRIDE (CSS media query for real browsers) ---- */
-/* PS3 browser ignores media queries — safe fallback to table layout */
-@media only screen and (max-width: 600px) {
-  .wrap { width: 96%; }
-  .site-title { font-size: 18px; letter-spacing: 2px; }
-  .grid-table, .grid-table tbody, .grid-table tr, .grid-table td { display: block; width: 100%; }
-  .grid-table td { margin-bottom: 10px; }
-  .card { padding: 14px 12px; }
-}
-
 </style>
 
 <script type="text/javascript">
-// Smart device detection — runs only if JS supported (PC/Mobile)
-// PS3 browser has very limited JS but can run basic scripts
 (function() {
-  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 800;
   var ua = navigator.userAgent || '';
+  var isPS3    = (ua.indexOf('PLAYSTATION 3') !== -1 || ua.indexOf('PS3') !== -1);
+  var isMobile = !isPS3 && /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
 
-  var device = 'PC';
-  var isPS3  = (ua.indexOf('PLAYSTATION 3') !== -1 || ua.indexOf('PS3') !== -1);
-  var isMobile = !isPS3 && (w < 601 || /Mobi|Android|iPhone|iPad|iPod/i.test(ua));
-
-  if (isPS3)     device = 'PS3';
-  else if (isMobile) device = 'Mobile';
-
-  // Show badge
   window.onload = function() {
-    var badge = document.getElementById('device-badge');
-    if (badge) {
-      if (device === 'PS3')    { badge.innerHTML = '&#9654; Running on PlayStation 3'; badge.style.borderColor = '#003791'; badge.style.color = '#5aaaff'; }
-      else if (device === 'Mobile') { badge.innerHTML = '&#9654; Running on Mobile';       badge.style.borderColor = '#009050'; badge.style.color = '#40e890'; }
-      else                          { badge.innerHTML = '&#9654; Running on PC';             badge.style.borderColor = '#6030c0'; badge.style.color = '#b080ff'; }
-    }
-
-    // Mobile: stack table cells to single column
-    if (isMobile) {
-      var tds = document.getElementsByTagName('td');
-      for (var i = 0; i < tds.length; i++) {
-        tds[i].style.display = 'block';
-        tds[i].style.width   = '100%';
-        tds[i].style.marginBottom = '10px';
+    var badge = document.getElementById('dbadge');
+    if (!badge) return;
+    if (isPS3) {
+      badge.innerHTML    = '&#9654; RUNNING ON PLAYSTATION 3';
+      badge.style.borderColor = '#003791';
+      badge.style.color       = '#5aaaff';
+    } else if (isMobile) {
+      badge.innerHTML    = '&#9654; RUNNING ON MOBILE';
+      badge.style.borderColor = '#009050';
+      badge.style.color       = '#40e890';
+      /* stack columns on mobile */
+      var cells = document.getElementsByTagName('td');
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].style.display = 'block';
+        cells[i].style.width   = '100%';
+        cells[i].style.padding = '0 0 10px 0';
       }
-      // Fix colspan spans
-      var title = document.getElementById('site-title');
-      if (title) { title.style.fontSize = '18px'; title.style.letterSpacing = '2px'; }
+      var title = document.getElementById('stitle');
+      if (title) title.style.fontSize = '18px';
+    } else {
+      badge.innerHTML    = '&#9654; RUNNING ON PC';
+      badge.style.borderColor = '#6030c0';
+      badge.style.color       = '#b080ff';
     }
   };
 })();
@@ -270,134 +271,150 @@ body {
 
 </head>
 <body>
-
 <div class="wrap">
 
   <!-- HEADER -->
   <div class="header">
     <div class="logo-box">MULTI VERSE</div>
-    <div class="site-title" id="site-title">MultiVerse <span>PS3</span></div>
+    <div class="site-title" id="stitle">MultiVerse <span>PS3</span></div>
     <div class="subtitle">PlayStation 3 &#183; CFW &amp; HEN Tools &#183; Download Hub</div>
+    <br />
     <div class="credits">Web Made by: <b>RoiiX</b></div>
     <br />
-    <div class="device-badge" id="device-badge">&#9654; Detecting Device...</div>
+    <div class="device-badge" id="dbadge">&#9654; Detecting Device...</div>
   </div>
 
-  <!-- CORE TOOLS -->
+  <!-- ===== CORE TOOLS ===== -->
   <div class="sec-label">&#9658; Core Tools</div>
 
   <table class="grid-table" cellpadding="0" cellspacing="0">
     <tbody>
+
       <tr>
-        <td>
-          <div class="card card-blue">
+        <td class="cell">
+          <div class="card c-blue">
             <div class="card-tag">File Manager</div>
             <div class="card-title">multiMAN</div>
             <div class="card-desc">Multi-purpose file manager, game loader, and backup manager. Essential for every CFW PS3.</div>
-            <a class="btn btn-blue" href="https://store.brewology.com/ahomebrew.php?brewid=24">&#8659; Download</a>
+            <a class="btn b-blue" href="https://store.brewology.com/ahomebrew.php?brewid=24">&#8659; Download</a>
           </div>
         </td>
-        <td>
-          <div class="card card-cyan">
+        <td class="cell-right">
+          <div class="card c-cyan">
             <div class="card-tag">VSH Plugin</div>
             <div class="card-title">webMAN MOD</div>
             <div class="card-desc">Powerful VSH plugin for mounting games, fan control, and web-based PS3 management.</div>
-            <a class="btn btn-cyan" href="https://github.com/aldostools/webMAN-MOD/releases/latest">&#8659; Download</a>
+            <a class="btn b-cyan" href="https://github.com/aldostools/webMAN-MOD/releases/latest">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
+      <tr><td colspan="2" class="row-spacer"></td></tr>
+
       <tr>
-        <td>
-          <div class="card card-gold">
+        <td class="cell">
+          <div class="card c-gold">
             <div class="card-tag">SPRX Plugin</div>
             <div class="card-title">Trophy Unlocker</div>
             <div class="card-desc">SPRX plugin to unlock PS3 trophies via CCAPI. Unlock any trophy in-game easily.</div>
-            <a class="btn btn-gold" href="https://www.psx-place.com/resources/trophy-unlocker.740/">&#8659; Download</a>
+            <a class="btn b-gold" href="https://www.psx-place.com/resources/trophy-unlocker.740/">&#8659; Download</a>
           </div>
         </td>
-        <td>
-          <div class="card card-purple">
+        <td class="cell-right">
+          <div class="card c-purple">
             <div class="card-tag">Save Manager</div>
             <div class="card-title">Apollo Save Tool</div>
             <div class="card-desc">Advanced save-data manager with patching, resigning, and cloud sync. By bucanero.</div>
-            <a class="btn btn-purple" href="https://github.com/bucanero/apollo-ps3/releases/latest">&#8659; Download</a>
+            <a class="btn b-purple" href="https://github.com/bucanero/apollo-ps3/releases/latest">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
+      <tr><td colspan="2" class="row-spacer"></td></tr>
+
       <tr>
-        <td>
-          <div class="card card-green">
+        <td class="cell">
+          <div class="card c-green">
             <div class="card-tag">Game Loader</div>
             <div class="card-title">Iris Manager</div>
             <div class="card-desc">Clean game backup manager with PS3 XMB integration. Simple, lightweight, reliable.</div>
-            <a class="btn btn-green" href="https://www.psx-place.com/resources/iris-manager.755/">&#8659; Download</a>
+            <a class="btn b-green" href="https://www.psx-place.com/resources/iris-manager.755/">&#8659; Download</a>
           </div>
         </td>
-        <td>
-          <div class="card card-red">
+        <td class="cell-right">
+          <div class="card c-red">
             <div class="card-tag">HEN Enabler</div>
             <div class="card-title">PS3HEN</div>
             <div class="card-desc">Homebrew Enabler for non-CFW consoles. Run homebrew and backups without a mod chip.</div>
-            <a class="btn btn-red" href="https://www.psx-place.com/resources/ps3hen.1340/">&#8659; Download</a>
+            <a class="btn b-red" href="https://www.psx-place.com/resources/ps3hen.1340/">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
     </tbody>
   </table>
 
   <div class="divider"></div>
 
-  <!-- EXTRA TOOLS -->
+  <!-- ===== EXTRA TOOLS ===== -->
   <div class="sec-label">&#9658; Extra Tools</div>
 
   <table class="grid-table" cellpadding="0" cellspacing="0">
     <tbody>
+
       <tr>
-        <td>
-          <div class="card card-orange">
+        <td class="cell">
+          <div class="card c-orange">
             <div class="card-tag">CFW Toolbox</div>
             <div class="card-title">Rebug Toolbox</div>
             <div class="card-desc">System-level toolbox for Rebug CFW. Manage QA flag, mode switching, and advanced settings.</div>
-            <a class="btn btn-orange" href="https://github.com/n1ghty/rebug-toolbox/releases">&#8659; Download</a>
+            <a class="btn b-orange" href="https://github.com/n1ghty/rebug-toolbox/releases">&#8659; Download</a>
           </div>
         </td>
-        <td>
-          <div class="card card-teal">
+        <td class="cell-right">
+          <div class="card c-teal">
             <div class="card-tag">PKG Installer</div>
             <div class="card-title">PKGi PS3</div>
             <div class="card-desc">Browse and install PS3 content packages directly from your console. No PC required.</div>
-            <a class="btn btn-teal" href="https://github.com/bucanero/pkgi-ps3/releases/latest">&#8659; Download</a>
+            <a class="btn b-teal" href="https://github.com/bucanero/pkgi-ps3/releases/latest">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
+      <tr><td colspan="2" class="row-spacer"></td></tr>
+
       <tr>
-        <td>
-          <div class="card card-pink">
+        <td class="cell">
+          <div class="card c-pink">
             <div class="card-tag">Media Player</div>
             <div class="card-title">Showtime</div>
             <div class="card-desc">Feature-rich media player. Supports local files, network streams, and video formats.</div>
-            <a class="btn btn-pink" href="https://github.com/andoma/showtime/releases">&#8659; Download</a>
+            <a class="btn b-pink" href="https://github.com/andoma/showtime/releases">&#8659; Download</a>
           </div>
         </td>
-        <td>
-          <div class="card card-indigo">
+        <td class="cell-right">
+          <div class="card c-indigo">
             <div class="card-tag">Emulator Frontend</div>
             <div class="card-title">RetroArch PS3</div>
             <div class="card-desc">Universal emulator frontend. Play retro games from dozens of classic consoles.</div>
-            <a class="btn btn-indigo" href="https://www.retroarch.com/?page=platforms">&#8659; Download</a>
+            <a class="btn b-indigo" href="https://www.retroarch.com/?page=platforms">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
+      <tr><td colspan="2" class="row-spacer"></td></tr>
+
       <tr>
-        <td colspan="2">
-          <div class="card card-silver">
+        <td class="cell-full" colspan="2">
+          <div class="card c-silver">
             <div class="card-tag">HEN Utilities</div>
             <div class="card-title">PS3 HEN Tools</div>
             <div class="card-desc">Collection of utilities for HEN users — payload injectors, package managers, and system tweaks.</div>
-            <a class="btn btn-silver" href="https://www.psx-place.com/forums/ps3-homebrew.15/">&#8659; Download</a>
+            <a class="btn b-silver" href="https://www.psx-place.com/forums/ps3-homebrew.15/">&#8659; Download</a>
           </div>
         </td>
       </tr>
+
     </tbody>
   </table>
 
